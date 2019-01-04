@@ -24,5 +24,9 @@ comment out the line: vSeeds.emplace_back
 const char* pszTimestamp = "xxxxxx........";
 
 8. The maximum block size is changed.
+In consensus/consensus.h, changed from 400000 to 800000, this will give you 2M size block
+static const unsigned int MAX_BLOCK_WEIGHT = 8000000
 
 9. The block interval is changed.
+In chainparams.cpp
+Modify the nPowTargetSpacing from 10*60 to 1*60
