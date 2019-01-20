@@ -102,7 +102,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1510704000; // November 15th, 2017.
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000723d3581fe1bd55373540a");
+        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000100010001");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0000000000000000003b9ce759c2a087d52abc4266f8f4ebd6d768b89defa50a"); //477890
@@ -114,18 +114,18 @@ public:
          */
         //pchMessageStart[0] = 0xf9;
         //pchMessageStart[1] = 0xbe;
-        pchMessageStart[0] = 0xbe;
-        pchMessageStart[1] = 0xf9;
-        pchMessageStart[2] = 0xb4;
-        pchMessageStart[3] = 0xd9;
-        nDefaultPort = 8333;
+        pchMessageStart[0] = 0x9f;
+        pchMessageStart[1] = 0xc3;
+        pchMessageStart[2] = 0xf1;
+        pchMessageStart[3] = 0x16;
+        nDefaultPort = 8963;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1231006508, 1170854509, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 fprintf(stdout,"%s\n", consensus.hashGenesisBlock.ToString().c_str());
 fprintf(stdout,"%s\n",genesis.hashMerkleRoot.ToString().c_str());
-        //assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
+        assert(consensus.hashGenesisBlock == uint256S("00000000395a494f09a2e15dc8c32e0ea69aa60dde5b5a3aafc77cf059063f72"));
         assert(genesis.hashMerkleRoot == uint256S("e9d3d787cec0e87057ebe72e4c91e1c25fc75f71d45d19eef07dd52bb15af594"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
